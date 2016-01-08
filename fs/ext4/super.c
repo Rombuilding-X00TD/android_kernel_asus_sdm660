@@ -5336,11 +5336,6 @@ static int ext4_enable_quotas(struct super_block *sb)
 		le32_to_cpu(EXT4_SB(sb)->s_es->s_grp_quota_inum),
 		le32_to_cpu(EXT4_SB(sb)->s_es->s_prj_quota_inum)
 	};
-	bool quota_mopt[EXT4_MAXQUOTAS] = {
-		test_opt(sb, USRQUOTA),
-		test_opt(sb, GRPQUOTA),
-		test_opt(sb, PRJQUOTA),
-	};
 
 	sb_dqopt(sb)->flags |= DQUOT_QUOTA_SYS_FILE;
 	for (type = 0; type < EXT4_MAXQUOTAS; type++) {
