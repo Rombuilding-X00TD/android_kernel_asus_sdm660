@@ -36,9 +36,7 @@
 	((((op0)&3)<<19)|((op1)<<16)|((crn)<<12)|((crm)<<8)|((op2)<<5))
 
 #ifdef __ASSEMBLY__
-// The space separator is omitted so that __emit_inst(x) can be parsed as
-// either an assembler directive or an assembler macro argument.
-#define __emit_inst(x)			.inst(x)
+#define __emit_inst(x)			.inst (x)
 #else
 #define __emit_inst(x)			".inst " __stringify((x)) "\n\t"
 #endif
