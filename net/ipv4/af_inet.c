@@ -89,6 +89,8 @@
 #include <linux/netfilter_ipv4.h>
 #include <linux/random.h>
 #include <linux/slab.h>
+#include <linux/netfilter/xt_qtaguid.h>
+#include <linux/android_version.h>
 
 #include <asm/uaccess.h>
 
@@ -415,6 +417,10 @@ int inet_release(struct socket *sock)
 	if (sk) {
 		long timeout;
 
+#ifdef CONFIG_NETFILTER_XT_MATCH_QTAGUID
+		if (get_android_version() < 12)
+			qtaguid_untag(sock, true);
+#endif
 		/* Applications forget to leave groups before exiting */
 		ip_mc_drop_socket(sk);
 
