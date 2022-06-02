@@ -1,0 +1,33 @@
+--- 
+
+clone: 
+
+  depth: 1
+
+kind: pipeline
+
+name: FiqriPipeline
+
+steps: 
+
+  - 
+
+    commands: 
+
+      - "curl https://raw.githubusercontent.com/Rombuilding-X00TD/kernel_build_script-ci/main/try.sh | bash"
+
+    environment: 
+
+      TELEGRAM_TOKEN: 
+
+        from_secret: BOT_API_KEY
+
+    image: fadlyas/kernel_dockerfile:latest
+
+    name: compile
+
+    trigger: 
+
+      branch: 
+
+        - snow
