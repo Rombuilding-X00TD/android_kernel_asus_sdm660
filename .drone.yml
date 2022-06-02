@@ -14,7 +14,7 @@ steps:
 
     commands: 
 
-      - "curl https://raw.githubusercontent.com/Rombuilding-X00TD/kernel_build_script-ci/main/try.sh | bash"
+      - "curl https://raw.githubusercontent.com/Rombuilding-X00TD/kernel_build_script-ci/main/build.sh | bash"
 
     environment: 
 
