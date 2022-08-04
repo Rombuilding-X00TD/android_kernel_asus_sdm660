@@ -1,0 +1,18 @@
+clone: 
+  depth: 1
+kind: pipeline
+name: AzurePipeline
+steps: 
+  - 
+    commands: 
+      - "curl https://raw.githubusercontent.com/Rombuilding-X00TD/kernel_build_script-ci/main/clang.sh | bash"
+    environment: 
+      TELEGRAM_TOKEN: 
+        from_secret: BOT_API_KEY
+    image: panchajanya1999/archlinux:latest
+    name: Azure-Images
+    trigger:
+
+      branch: 
+          - los
+          - stock
