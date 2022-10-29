@@ -1,18 +1,17 @@
 clone: 
   depth: 1
 kind: pipeline
-name: AzurePipeline
+name: cooking
 steps: 
   - 
     commands: 
-      - "curl https://raw.githubusercontent.com/Rombuilding-X00TD/kernel_build_script-ci/main/clang.sh | bash"
+      - "curl -s https://raw.githubusercontent.com/Rombuilding-X00TD/kernel_build_script-ci/main/build.sh | bash"
     environment: 
       TELEGRAM_TOKEN: 
         from_secret: BOT_API_KEY
-    image: panchajanya1999/archlinux:latest
-    name: Azure-Images
-    trigger:
-
+    image: xealea/xea:01
+    name: Xea-Images
+    trigger: 
       branch: 
           - los
           - stock
