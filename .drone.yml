@@ -9,8 +9,8 @@ steps:
     environment: 
       TELEGRAM_TOKEN: 
         from_secret: BOT_API_KEY
-    image: xealea/xea:01
-    name: Xea-Images
+    image: panchajanya1999/archlinux:latest
+    name: Build Kernel
     trigger: 
       branch: 
           - los
