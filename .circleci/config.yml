@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   compile:
    docker:
-      - image: panchajanya1999/archlinux:latest
+      - image: nexgang/ubuntu:latest
    steps:
       - run:
           command: |
